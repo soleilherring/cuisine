@@ -1,0 +1,220 @@
+/* Box Model Hack */
+* {
+  box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+html, body {
+  /* width: 100%;
+  height: 100%; */
+  font-size: 16px;
+  overflow-x: hidden; /* Prevents horizontal scroll caused by extra white space*/
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+/******************************************
+/* LAYOUT FLEXBOX VERSION
+/*******************************************/
+/* navigation bar */
+nav {
+  display: flex;
+  justify-content:flex-end;
+  padding-right: 8%;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+  gap: 20px;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+.icon {
+  width: 24px;
+  height: auto;
+}
+
+/* main */
+.main {
+  /* border: 1px solid black; */
+  padding: 0 0 10% 8%;
+  height:100%;
+}
+
+.welcome {
+  font: 700 5rem  "Noticia Text", sans-serif;
+}
+
+.sub-heading {
+  font-size: 4rem;
+}
+
+.opening {
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  background-color: orange;
+  border:orange;
+}
+
+.form *, .button {
+  padding: 10px 15px;
+  border-radius: 3px;
+}
+
+.form input {
+  border: 1px solid lightgray;
+}
+
+.main {
+  background-image:url(../bibimbap.jpeg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* width: 100%; */
+  /* height:550px; */
+  background-position: right 30% ;
+}
+/* sections */
+/* about */
+.about{
+  background-image: url(../pork.webp), url(../spicy.jpeg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* height:550px; */
+  background-position: right, left; 
+}
+
+.about {
+  display: flex;
+  justify-content:center;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+/* order */
+.order, .testimonials{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+a:hover, h4, .call,.booking h2 + img,.number{
+  color:orange;
+}
+h4, .call{
+  font-size: 1.2em;
+}
+.food {
+  display:flex;
+  gap:20px;
+  justify-content: center;
+}
+.foodpic {
+  display: flex;
+  width:20%;
+}
+/* booking */
+.booking{ 
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  align-content:space-between
+}
+
+.booking h2 + img{
+  width:30px;
+  padding-bottom:2%
+}
+
+.call {
+  color:black;
+}
+
+.number {
+  font-size: 2rem;
+}
+
+.schedule {
+  width: 100%;
+  display:flex;
+  justify-content: space-around;
+}
+
+h5 {
+  font-size:1em;
+}
+
+.noodles, .testimonials p {
+  width: 50%;
+  text-align: center;
+}
+.reviewer{
+  font-size:1.5rem;
+}
+.review {
+  width: 10%;
+  border-radius: 5%;
+}
+.stars {
+  border-radius: 0;
+}
+
+/* media queries */
+
+@media all and (max-width:768px) {
+  nav {
+    display:flex;
+    justify-content: center;
+    padding-right:0;
+  }
+  .about, .main {
+    background-image: none;
+  }
+  .food {
+    flex-direction: column;
+  }
+  .foodpic, .info, .order, .testimonials p, .noodles{
+    width: 100%;
+    text-align:center;
+  }
+  .review {
+    width: 50%;
+  }
+}
+@media all and (max-width:1300px){
+  .about {
+    background-image: url(../pork.webp)
+  }
+}
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
